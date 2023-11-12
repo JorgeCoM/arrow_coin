@@ -13,7 +13,7 @@ export const UserLayout = () => {
         <a href="#" className="logo">
           <i className="bx bx-coin"></i>
           <div className="logo-name">
-            <span>Arrow</span>Coin
+            <span>FI</span>SO
           </div>
         </a>
         <ul className="side-menu">
