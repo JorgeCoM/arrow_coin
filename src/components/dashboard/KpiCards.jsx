@@ -1,61 +1,95 @@
-import React from "react";
-import { Card, Text, Metric, Icon, Divider, Flex, Grid } from "@tremor/react";
-import { CashIcon, CreditCardIcon } from "@heroicons/react/solid";
+import {
+  Card,
+  Metric,
+  Text,
+  AreaChart,
+  BadgeDelta,
+  Flex,
+  // DeltaType,
+  Grid,
+} from "@tremor/react";
 
-const categories = [
+const data = [
   {
-    title: "Resumen",
-    metric: "$ 6,456",
-    metricPrev: "1,234,567",
-    icon: CashIcon,
-    color: "cyan",
-    footer: "1 - 27 Julio, 2023",
+    Month: "Enero 21",
+    Ingresos: 2890,
+    Gastos: 2400,
+    // Resumen: 4938,
   },
   {
-    title: "Tarjetas",
-    metric: "3",
-    metricPrev: "2",
-    icon: CreditCardIcon,
-    color: "cyan",
-    footer: "",
+    Month: "Febrero 21",
+    Ingresos: 1890,
+    Gastos: 1398,
+    // Resumen: 2938,
   },
+  // ...
   {
-    title: "Cuentas",
-    metric: "0",
-    metricPrev: "2",
-    icon: CreditCardIcon,
-    color: "cyan",
-    footer: "Próximamente disponible",
+    Month: "Julio 21",
+    Ingresos: 3490,
+    Gastos: 4300,
+    // Resumen: 2345,
   },
 ];
 
+const categories = [
+  {
+    title: "Ingresos",
+    metric: "$ 12,699",
+    metricPrev: "$ 9,456",
+    delta: "34.3%",
+    deltaType: "moderateIncrease",
+  },
+  {
+    title: "Gastos",
+    metric: "$ 12,348",
+    metricPrev: "$ 10,456",
+    delta: "18.1%",
+    deltaType: "moderateIncrease",
+  },
+  // {
+  //   title: "Resumen",
+  //   metric: "948",
+  //   metricPrev: "1,082",
+  //   delta: "12.3%",
+  //   deltaType: "moderateDecrease",
+  // },
+];
+
+const valueFormatter = (number) =>
+  `$${Intl.NumberFormat("us").format(number).toString()}`;
+
 export const KpiCards = () => {
   return (
-    <Grid numItemsSm={2} numItemsLg={3} className="gap-11">
+    <Grid numItemsSm={2} numItemsLg={2} className="gap-6">
       {categories.map((item) => (
-        <Card
-          style={{ width: "240px", height: "160px" }}
-          className="relative top-[-23px]"
-          key={item.title}
-          decoration="top"
-          decorationColor={item.color}
-        >
-          <Flex justifyContent="start" className="space-x-4">
-            <Icon
-              icon={item.icon}
-              variant="light"
-              size="xl"
-              color={item.color}
-            />
-            <div className="truncate">
-              <Text color="white">{item.title}</Text>
-              <Metric style={{ fontSize: "24px" }} className="truncate">
-                {item.metric}
-              </Metric>
-            </div>
+        <Card key={item.title}>
+          <Flex alignItems="start">
+            <Text>{item.title}</Text>
+            <BadgeDelta deltaType={item.deltaType}>
+              <p className="text-black">{item.delta}</p>
+            </BadgeDelta>
           </Flex>
-          <Divider />
-          <Text className="text-xs text-gray-300">{item.footer}</Text>
+          <Flex
+            className="space-x-3 truncate"
+            justifyContent="start"
+            alignItems="baseline"
+          >
+            <Metric style={{ fontSize: "20px" }}>{item.metric}</Metric>
+            <Text>from {item.metricPrev}</Text>
+          </Flex>
+          <AreaChart
+            className="h-28"
+            data={data}
+            index="Month"
+            valueFormatter={valueFormatter}
+            categories={[item.title]}
+            colors={["blue"]}
+            showXAxis={true}
+            showGridLines={false}
+            startEndOnly={true}
+            showYAxis={false}
+            showLegend={false}
+          />
         </Card>
       ))}
     </Grid>

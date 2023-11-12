@@ -7,7 +7,7 @@ import {
 
 export const Chat = () => {
   return (
-    <div className="w-full flex h-[540px] mt-12">
+    <div className="w-full flex h-[640px]">
       <div className="w-[280px] h-full border-r border-gray-600 rounded-l-lg bg-gray-900">
         <div className="w-full flex px-2 flex-col h-full">
           <ChatHead />

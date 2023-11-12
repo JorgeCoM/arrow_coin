@@ -4,5 +4,6 @@ export * from './Users/Dashboard'
 export * from './Users/Transfer'
 export * from './Users/News'
 export * from './Users/Store'
-export * from './Users/Wallet'
+export * from './Users/Soon'
+
 

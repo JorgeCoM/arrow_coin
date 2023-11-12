@@ -8,12 +8,13 @@ export const CreditTable = () => {
   const cardSelected = getSelectedCreditCard(cards);
 
   return (
-    <table className="table-auto mt-2 w-full">
+    <table className="table-auto mt-2 bg-gray-900 rounded-lg w-full">
       <thead>
         <tr className="table__th">
           <th className="px-4 py-2 text-center">Origen</th>
-          <th className="px-4 py-2 text-center">Fecha</th>
+          <th className="px-4 py-2 text-center">Categoria</th>
           <th className="px-4 py-2 text-center">Monto</th>
+          <th className="px-4 py-2 text-center">Fecha</th>
         </tr>
       </thead>
       <tbody>

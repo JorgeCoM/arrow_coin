@@ -1,4 +1,12 @@
-import { Card, Title, Text, AreaChart, TabGroup, TabPanel, TabPanels } from "@tremor/react";
+import {
+  Card,
+  Title,
+  Text,
+  AreaChart,
+  TabGroup,
+  TabPanel,
+  TabPanels,
+} from "@tremor/react";
 import { FilterGrafitComponent } from "../FilterGrafitComponent";
 import { useFilterGrafig } from "../../hooks";
 
@@ -49,25 +57,30 @@ const data = [
 data.sort((a, b) => a.time - b.time);
 
 export const MetricResumen2 = () => {
-
-  const {formatDataForChart, dataFormatter, getFilteredData, selectedPeriod, setSelectedPeriod} = useFilterGrafig(data)
+  const {
+    formatDataForChart,
+    dataFormatter,
+    getFilteredData,
+    selectedPeriod,
+    setSelectedPeriod,
+  } = useFilterGrafig(data);
 
   return (
-    <Card style={{ width: '100%' }}>
+    <Card style={{ width: "100%", height: "100%" }}>
       <TabGroup index={selectedPeriod} onIndexChange={setSelectedPeriod}>
-         <FilterGrafitComponent/>
+        <FilterGrafitComponent />
         <TabPanels>
           {["1D", "1W", "1M", "3M", "6M", "1Y"].map((period) => (
             <TabPanel key={period}>
               <AreaChart
-                style={{height: '250px'}}
+                style={{ height: "262px" }}
                 data={formatDataForChart(getFilteredData(period), period)}
                 index="time"
-                className="mt-6"
                 categories={["Ingresos", "Gastos"]}
                 colors={["indigo", "fuchsia"]}
                 valueFormatter={dataFormatter}
                 showLegend={false}
+                showGridLines={true}
                 yAxisWidth={48}
                 curveType="monotone"
                 showXAxis={true}
