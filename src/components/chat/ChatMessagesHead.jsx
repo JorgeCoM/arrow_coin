@@ -4,10 +4,10 @@ export const ChatMessagesHead = () => {
       <p>Mensajes</p>
       <div>
         <button>
-          <i class="bx bxs-send text-lg text-white"></i>
+          <i className="bx bxs-send text-lg text-white"></i>
         </button>
         <button>
-          <i class="bx bx-cog text-lg ml-1 text-white"></i>
+          <i className="bx bx-cog text-lg ml-1 text-white"></i>
         </button>
       </div>
     </div>
