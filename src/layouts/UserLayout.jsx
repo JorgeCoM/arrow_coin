@@ -13,7 +13,7 @@ export const UserLayout = () => {
         <a href="#" className="logo">
           <i className="bx bx-coin"></i>
           <div className="logo-name">
-            <span>Arrow</span>Coin
+            <span>FI</span> SO
           </div>
         </a>
         <ul className="side-menu">
@@ -39,25 +39,55 @@ export const UserLayout = () => {
                   <i className="bx bx-chat"></i>Chat
                 </div>
                 <div className="flex mr-1 items-center">
-                  <div className="p-1 bg-red-500 text-white rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium">1 nuevo</span>
+                  {/* <div className="p-1 px-2 bg-yellow-500 text-white rounded-full flex items-center justify-center">
+                    <span className="text-sm font-medium">Soon</span>
+                  </div> */}
+                </div>
+              </NavLink>
+            </div>
+          </li>
+          <li
+            className={`${
+              isRouteActive(router) === "reminders" ? "active" : ""
+            }`}
+          >
+            <div className="flex items-center w-full h-full justify-between">
+              <NavLink
+                to={"/user/reminders"}
+                className="flex items-center justify-between"
+              >
+                <div className="flex">
+                  <i className="bx bx-calendar"></i>Recordatorios
+                </div>
+                <div className="flex mr-1 items-center">
+                  <div className="p-1 px-2 bg-yellow-500 text-white rounded-full flex items-center justify-center">
+                    <span className="text-sm font-medium">Soon</span>
                   </div>
                 </div>
               </NavLink>
             </div>
           </li>
-          <li className={`${isRouteActive(router) == "store" ? "active" : ""}`}>
-            <NavLink to={"/user/store"}>
-              <i className="bx bx-store-alt"></i>Tienda
-            </NavLink>
-          </li>
-          <li
-            className={`${isRouteActive(router) == "transfer" ? "active" : ""}`}
+          {/* <li
+            className={`${
+              isRouteActive(router) === "transfer" ? "active" : ""
+            }`}
           >
-            <NavLink to={"/user/transfer"}>
-              <i className="bx bx-transfer"></i>Transferencias
-            </NavLink>
-          </li>
+            <div className="flex items-center w-full h-full justify-between">
+              <NavLink
+                to={"/user/transfer"}
+                className="flex items-center justify-between"
+              >
+                <div className="flex">
+                  <i className="bx bx-transfer"></i>Transferencias
+                </div>
+                <div className="flex mr-1 items-center">
+                  <div className="p-1 px-2 bg-yellow-500 text-white rounded-full flex items-center justify-center">
+                    <span className="text-sm font-medium">Soon</span>
+                  </div>
+                </div>
+              </NavLink>
+            </div>
+          </li> */}
           <li className={`${isRouteActive(router) === "news" ? "active" : ""}`}>
             <div className="flex items-center w-full h-full justify-between">
               <NavLink
@@ -68,8 +98,8 @@ export const UserLayout = () => {
                   <i className="bx bx-news"></i>Noticias
                 </div>
                 <div className="flex mr-1 items-center">
-                  <div className="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium">2</span>
+                  <div className="p-1 px-2 bg-yellow-500 text-white rounded-full flex items-center justify-center">
+                    <span className="text-sm font-medium">Soon</span>
                   </div>
                 </div>
               </NavLink>
@@ -77,11 +107,23 @@ export const UserLayout = () => {
           </li>
 
           <li
-            className={`${isRouteActive(router) == "config" ? "active" : ""}`}
+            className={`${isRouteActive(router) === "config" ? "active" : ""}`}
           >
-            <NavLink to={"/user/config"}>
-              <i className="bx bx-cog"></i>Configuración
-            </NavLink>
+            <div className="flex items-center w-full h-full justify-between">
+              <NavLink
+                to={"/user/config"}
+                className="flex items-center justify-between"
+              >
+                <div className="flex">
+                  <i className="bx bx-cog"></i>Configuración
+                </div>
+                <div className="flex mr-1 items-center">
+                  <div className="p-1 px-2 bg-yellow-500 text-white rounded-full flex items-center justify-center">
+                    <span className="text-sm font-medium">Soon</span>
+                  </div>
+                </div>
+              </NavLink>
+            </div>
           </li>
         </ul>
         <ul className="side-menu">
@@ -96,14 +138,14 @@ export const UserLayout = () => {
 
       <div className="content">
         <div className="main-container">
-            <div className="slider-container">
+          {/* <div className="slider-container">
               <i
                 ref={menuBarRef}
                 className="bx bx-left-arrow-alt slider-arrow"
               ></i>
-            </div>
+            </div> */}
           <main>
-              <Outlet />
+            <Outlet />
           </main>
         </div>
       </div>

@@ -8,43 +8,43 @@
     --dark-grey: #AAAAAA;
     --dark: #363949;
     --danger: #D32F2F;
-	--light-danger: #FECDD3;
+    --light-danger: #FECDD3;
     --warning: #FBC02D;
     --light-warning: #FFF2C6;
     --success: #388E3C;
     --light-success: #BBF7D0;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-.bx{
+.bx {
     font-size: 1.7rem;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
 }
 
-html{
+html {
     overflow-x: hidden;
 }
 
-body.dark{
+body.dark {
     --light: #181a1e;
     --grey: #25252c;
     --dark: #fbfbfb
 }
 
-body{
+body {
     background: var(--grey);
 }
 
@@ -52,7 +52,7 @@ main {
     margin: 0 10px;
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -71,11 +71,11 @@ main {
     z-index: 400;
 }
 
-.sidebar.close{
+.sidebar.close {
     width: 60px;
 }
 
-.sidebar .logo{
+.sidebar .logo {
     font-size: 24px;
     font-weight: 700;
     height: 56px;
@@ -87,25 +87,25 @@ main {
     box-sizing: content-box;
 }
 
-.sidebar .logo .logo-name span{
+.sidebar .logo .logo-name span {
     color: var(--dark);
 }
 
-.sidebar .logo .bx{
+.sidebar .logo .bx {
     min-width: 60px;
     display: flex;
     justify-content: center;
     font-size: 2.2rem;
 }
 
-.sidebar .side-menu{
+.sidebar .side-menu {
     width: 100%;
     margin-top: 48px;
 }
 
 .slider-container {
     position: absolute;
-    left: -50px;
+    left: -80px;
 }
 
 .slider-arrow {
@@ -120,7 +120,7 @@ main {
 }
 
 
-.sidebar .side-menu li{
+.sidebar .side-menu li {
     height: 48px;
     background: transparent;
     margin-left: 6px;
@@ -128,12 +128,12 @@ main {
     padding: 4px;
 }
 
-.sidebar .side-menu li.active{
+.sidebar .side-menu li.active {
     background: var(--grey);
     position: relative;
 }
 
-.sidebar .side-menu li.active::before{
+.sidebar .side-menu li.active::before {
     content: "";
     position: absolute;
     width: 40px;
@@ -145,7 +145,7 @@ main {
     z-index: -1;
 }
 
-.sidebar .side-menu li.active::after{
+.sidebar .side-menu li.active::after {
     content: "";
     position: absolute;
     width: 40px;
@@ -157,7 +157,7 @@ main {
     z-index: -1;
 }
 
-.sidebar .side-menu li a{
+.sidebar .side-menu li a {
     width: 100%;
     height: 100%;
     background: var(--light);
@@ -171,39 +171,43 @@ main {
     transition: all 0.3s ease;
 }
 
-.sidebar .side-menu li.active a{
+.sidebar .side-menu li.active a {
     color: var(--primary);
 }
 
-.sidebar.close .side-menu li a{
+.sidebar.close .side-menu li a {
     width: calc(48px - (4px * 2));
     transition: all 0.3s ease;
 }
 
-.sidebar .side-menu li a .bx{
+.sidebar.close a .logo-name {
+    display: none;
+}
+
+.sidebar .side-menu li a .bx {
     min-width: calc(60px - ((4px + 6px) * 2));
     display: flex;
     font-size: 1.6rem;
     justify-content: center;
 }
 
-.sidebar .side-menu li a.logout{
+.sidebar .side-menu li a.logout {
     color: var(--danger);
 }
 
-.content{
+.content {
     position: relative;
     width: calc(100% - 230px);
     left: 230px;
     transition: all 0.3s ease;
 }
 
-.sidebar.close~.content{
+.sidebar.close~.content {
     width: calc(100% - 60px);
     left: 60px;
 }
 
-.content nav{
+.content nav {
     height: 56px;
     background: var(--light);
     padding: 0 24px 0 0;
@@ -220,28 +224,28 @@ main {
     color: var(--dark);
 }
 
-.content nav a{
+.content nav a {
     color: var(--dark);
 }
 
-.content nav .bx.bx-menu{
+.content nav .bx.bx-menu {
     cursor: pointer;
     color: var(--dark);
 }
 
-.content nav form{
+.content nav form {
     max-width: 400px;
     width: 100%;
     margin-right: auto;
 }
 
-.content nav form .form-input{
+.content nav form .form-input {
     display: flex;
     align-items: center;
     height: 36px;
 }
 
-.content nav form .form-input input{
+.content nav form .form-input input {
     flex-grow: 1;
     padding: 0 16px;
     height: 100%;
@@ -253,7 +257,7 @@ main {
     color: var(--dark);
 }
 
-.content nav form .form-input button{
+.content nav form .form-input button {
     width: 80px;
     height: 100%;
     display: flex;
@@ -268,12 +272,12 @@ main {
     cursor: pointer;
 }
 
-.content nav .notif{
+.content nav .notif {
     font-size: 20px;
     position: relative;
 }
 
-.content nav .notif .count{
+.content nav .notif .count {
     position: absolute;
     top: -6px;
     right: -6px;
@@ -290,14 +294,14 @@ main {
     justify-content: center;
 }
 
-.content nav .profile img{
+.content nav .profile img {
     width: 36px;
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.content nav .theme-toggle{
+.content nav .theme-toggle {
     display: block;
     min-width: 50px;
     height: 25px;
@@ -307,7 +311,7 @@ main {
     border-radius: 25px;
 }
 
-.content nav .theme-toggle::before{
+.content nav .theme-toggle::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -319,22 +323,21 @@ main {
     transition: all 0.3s ease;
 }
 
-.content nav #theme-toggle:checked+.theme-toggle::before{
+.content nav #theme-toggle:checked+.theme-toggle::before {
     left: calc(100% - (25px - 4px) - 2px);
 }
 
-.content main{
+.content main {
     width: 100%;
-    padding: 20px 24px;
     max-height: calc(100vh - 56px);
 }
 
 @media screen and (max-width: 768px) {
-    .sidebar{
+    .sidebar {
         width: 200px;
     }
 
-    .content{
+    .content {
         width: calc(100% - 60px);
         left: 200px;
     }
@@ -342,12 +345,12 @@ main {
 }
 
 @media screen and (max-width: 576px) {
-    
-    .content nav form .form-input input{
+
+    .content nav form .form-input input {
         display: none;
     }
 
-    .content nav form .form-input button{
+    .content nav form .form-input button {
         width: auto;
         height: auto;
         background: transparent;
@@ -355,12 +358,12 @@ main {
         border-radius: none;
     }
 
-    .content nav form.show .form-input input{
+    .content nav form.show .form-input input {
         display: block;
         width: 100%;
     }
 
-    .content nav form.show .form-input button{
+    .content nav form.show .form-input button {
         width: 36px;
         height: 100%;
         color: var(--light);
@@ -368,7 +371,8 @@ main {
         border-radius: 0 36px 36px 0;
     }
 
-    .content nav form.show~.notif, .content nav form.show~.profile{
+    .content nav form.show~.notif,
+    .content nav form.show~.profile {
         display: none;
     }
 
