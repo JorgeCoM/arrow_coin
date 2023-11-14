@@ -1,8 +1,17 @@
 import { CreditCardFront } from "./CreditCardFront";
+import { useCreditCard } from "../../hooks";
 
-export const CreditCard = ({ maxWidth, maxHeight, showCardInfo, selectedInfo }) => {
+
+export const CreditCard = ({ maxWidth, maxHeight, showCardInfo }) => {
+  const { getAllCreditCards, getSelectedCreditCard } = useCreditCard()
+
+
+  const cards = getAllCreditCards()
+  const selectedCard = getSelectedCreditCard(cards)
+
+  // console.log(selectedInfo)
   const cardStyle = {
-    backgroundImage: `url(${selectedInfo.cardDiseing})`,
+    backgroundImage: `url(${selectedCard?.cardDiseing})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

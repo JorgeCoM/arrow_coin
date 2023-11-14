@@ -1,5 +1,5 @@
 import { useCreditCard } from "../../hooks/useCreditCard";
-import { CreditCard } from "./CreditCard";
+import { CreditCard } from "../../components/creditCard";
 import {
   updateCreditCard,
   updateOtherCreditCards,

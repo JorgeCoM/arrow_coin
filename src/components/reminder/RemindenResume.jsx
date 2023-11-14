@@ -9,36 +9,36 @@ export const RemindenResume = () => {
         <div className="w-full p-3 mb-5 border-l-[5px] border-l-[#1976D2] h-[80px] flex flex-col justify-center bg-gray-800 rounded-lg">
           <h3 className="text-white ml-2 mb-1">Pagar la casa</h3>
           <div className="w-full h-full flex items-center">
-            <i class="bx bx-stopwatch text-white mr-1"></i>
-            <p className="text-[14px] font-thin">29 enero</p>
+            <i className="bx bx-stopwatch text-gray-400  mr-1"></i>
+            <p className="text-[12px] text-gray-400 font-thin">29 enero</p>
           </div>
         </div>
         <div className="w-full p-3 mb-5 border-l-[5px] border-l-[#1976D2] h-[80px] flex flex-col justify-center bg-gray-800 rounded-lg">
           <h3 className="text-white ml-2 mb-1">Pagar la casa</h3>
           <div className="w-full h-full flex items-center">
-            <i class="bx bx-stopwatch text-white mr-1"></i>
-            <p className="text-[14px] font-thin">29 enero</p>
+            <i className="bx bx-stopwatch text-gray-400  mr-1"></i>
+            <p className="text-[12px] text-gray-400 font-thin">29 enero</p>
           </div>
         </div>
         <div className="w-full p-3 mb-5 border-l-[5px] border-l-[#1976D2] h-[80px] flex flex-col justify-center bg-gray-800 rounded-lg">
           <h3 className="text-white ml-2 mb-1">Pagar la casa</h3>
           <div className="w-full h-full flex items-center">
-            <i class="bx bx-stopwatch text-white mr-1"></i>
-            <p className="text-[14px] font-thin">29 enero</p>
+            <i className="bx bx-stopwatch text-gray-400  mr-1"></i>
+            <p className="text-[12px] text-gray-400 font-thin">29 enero</p>
           </div>
         </div>
         <div className="w-full p-3 mb-5 border-l-[5px] border-l-[#1976D2] h-[80px] flex flex-col justify-center bg-gray-800 rounded-lg">
           <h3 className="text-white ml-2 mb-1">Pagar la casa</h3>
           <div className="w-full h-full flex items-center">
-            <i class="bx bx-stopwatch text-white mr-1"></i>
-            <p className="text-[14px] font-thin">29 enero</p>
+            <i className="bx bx-stopwatch text-gray-400  mr-1"></i>
+            <p className="text-[12px] text-gray-400 font-thin">29 enero</p>
           </div>
         </div>
         <div className="w-full p-3 border-l-[5px] border-l-[#1976D2] h-[80px] flex flex-col justify-center bg-gray-800 rounded-lg">
           <h3 className="text-white ml-2 mb-1">Pagar la casa</h3>
           <div className="w-full h-full flex items-center">
-            <i class="bx bx-stopwatch text-white mr-1"></i>
-            <p className="text-[14px] font-thin">29 enero</p>
+            <i className="bx bx-stopwatch text-gray-400  mr-1"></i>
+            <p className="text-[12px] text-gray-400 font-thin">29 enero</p>
           </div>
         </div>
       </div>

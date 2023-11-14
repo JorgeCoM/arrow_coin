@@ -13,6 +13,7 @@ export const CreditTable = () => {
         <tr className="table__th">
           <th className="px-4 py-2 text-center">Origen</th>
           <th className="px-4 py-2 text-center">Categoria</th>
+          <th className="px-4 py-2 text-center">Estado</th>
           <th className="px-4 py-2 text-center">Monto</th>
           <th className="px-4 py-2 text-center">Fecha</th>
         </tr>

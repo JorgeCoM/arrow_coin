@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Card, LineChart, Title } from "@tremor/react";
 
 import { useCreditCard } from "../../hooks";
 
 export const CharCredit = () => {
-  const [value, setValue] = useState(null);
   const { getAllCreditCards, getSelectedCreditCard } = useCreditCard();
 
   const cards = getAllCreditCards();
@@ -18,9 +16,8 @@ export const CharCredit = () => {
           data={selectedCard.metric}
           index="date"
           categories={["Ingreso", "Gasto"]}
-          colors={["blue", "indigo"]}
+          colors={["green", "red"]}
           yAxisWidth={30}
-          onValueChange={(v) => setValue(v)}
           connectNulls={true}
         />
       </Card>

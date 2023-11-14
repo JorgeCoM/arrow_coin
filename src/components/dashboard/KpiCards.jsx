@@ -66,7 +66,7 @@ export const KpiCards = () => {
           <Flex alignItems="start">
             <Text>{item.title}</Text>
             <BadgeDelta deltaType={item.deltaType}>
-              <p className="text-black">{item.delta}</p>
+              <span className="text-black">{item.delta}</span>
             </BadgeDelta>
           </Flex>
           <Flex
@@ -75,7 +75,7 @@ export const KpiCards = () => {
             alignItems="baseline"
           >
             <Metric style={{ fontSize: "20px" }}>{item.metric}</Metric>
-            <Text>from {item.metricPrev}</Text>
+            <Text>desde {item.metricPrev}</Text>
           </Flex>
           <AreaChart
             className="h-28"

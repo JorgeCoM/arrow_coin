@@ -11,8 +11,8 @@ import Testimonials from "./Testimonials";
 import Hero from "./Hero";
 
 // wallet
-export * from './wallet/CreditCard';
-export * from './wallet/CreditDetail';
+export * from './CreditCard/CreditCard';
+export * from './CreditCard/CreditDetail';
 
 // dashboard
 export * from './dashboard/MetricResumen';
