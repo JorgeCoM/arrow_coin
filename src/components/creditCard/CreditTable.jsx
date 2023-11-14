@@ -9,7 +9,7 @@ export const CreditTable = () => {
 
   if (cardSelected.transitionDate.length === 0) {
     return (
-      <div className="w-full h-[265px] mt-2 p-6 rounded-lg">
+      <div className="w-full max-h-[265px] h-[265px] mt-2 p-6 rounded-lg">
         <div className="w-full h-full justify-center items-center flex border-[1px] rounded-xl border-white border-dashed p-4">
           <h3 className="text-gray-500 text-[14px]">No data</h3>
         </div>
@@ -17,7 +17,7 @@ export const CreditTable = () => {
     );
   } else {
     return (
-      <table className="table-auto mt-2 rounded-lg w-full">
+      <table className="table-auto max-h-[265px] h-[265px] mt-2 rounded-b-lg w-full">
         <thead>
           <tr className="table__th">
             <th className="px-4 py-2 text-center">Origen</th>

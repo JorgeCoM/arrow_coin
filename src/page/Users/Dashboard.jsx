@@ -43,7 +43,7 @@ export const Dashboard = () => {
             <div className="mt-2 mb-2 border-b-[1px] border-white h-[30px] w-full">
               <h2 className="text-white text-center text-[20px]">Historial</h2>
             </div>
-            <div className="w-full mb-2 h-[260px]">
+            <div className="w-full">
               <CreditTable />
             </div>
           </div>
@@ -84,17 +84,7 @@ export const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div
-              style={{
-                backgroundImage: `url(${selectedCard?.cardDiseing})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-              className="w-full h-[290px] object-cover mb-4 p-4 rounded-lg bg-gray-900"
-            >
-              <ActualityCardCredit />
-            </div>
+              {selectedCard.showCard ? <ActualityCardCredit /> : <></>}
             <div className="w-full h-full mb-4 p-6 rounded-lg bg-gray-900">
               <RemindenResume />
             </div>

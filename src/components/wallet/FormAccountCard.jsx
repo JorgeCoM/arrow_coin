@@ -25,6 +25,7 @@ export const FormAccountCard = ({ type }) => {
     typeCard: "Débito",
     selected: false,
     transitionDate: [],
+    showCard: true,
     metric: [],
     metriCosts: [],
   });
