@@ -1,12 +1,13 @@
 import React from "react";
 import { KpiCards } from "../../components/dashboard/KpiCards";
 import { MetricResumen2 } from "../../components";
-import { ActualityCardCredit } from "../../components/wallet/ActualityCardCredit";
+import { ActualityCardCredit, CreditTable } from "../../components/creditCard";
 import { RemindenResume } from "../../components/reminder/RemindenResume";
 import { useCreditCard } from "../../hooks";
 
 export const Dashboard = () => {
-  const { getAllCreditCards, getSelectedCreditCard, formatNumber } = useCreditCard();
+  const { getAllCreditCards, getSelectedCreditCard, formatNumber } =
+    useCreditCard();
 
   const cards = getAllCreditCards();
   const selectedCard = getSelectedCreditCard(cards);
@@ -32,59 +33,18 @@ export const Dashboard = () => {
           </div>
           <div className="w-full flex">
             <div className="rounded-lg flex-grow">
-              <MetricResumen2 />
+              <MetricResumen2 metricData={selectedCard.metric} />
             </div>
             {/* <div className="w-[295px] ml-5">
               <VolumeTransactions />
             </div> */}
           </div>
-          <div className="w-full h-[300px] mt-4 rounded-lg bg-gray-900">
-            <div className="mt-2 mb-2 h-[30px] ml-4 w-full">
-              <h2 className="text-white text-[20px]">Historial</h2>
+          <div className="w-full h-[300px] mt-4 bg-gray-900 rounded-lg">
+            <div className="mt-2 mb-2 border-b-[1px] border-white h-[30px] w-full">
+              <h2 className="text-white text-center text-[20px]">Historial</h2>
             </div>
-            <div className="w-full h-[260px] px-4">
-              <div className="w-full h-full flex flex-col">
-                <div className="w-full flex justify-between items-center h-[60px]">
-                  <i class="bx bx-credit-card text-[#1976D2] bg-gray-800 p-2 rounded-full"></i>
-                  <p>Pagos Online</p>
-                  <span className="p-2 text-green-600 font-bold rounded-lg">
-                    Completado
-                  </span>
-                  <p>350.00</p>
-                  <p>Netflix</p>
-                  <p>23.8.2023. 15:30PM</p>
-                </div>
-                <div className="w-full flex text-center justify-between items-center h-[60px]">
-                  <i class="bx bx-restaurant text-[#1976D2] bg-gray-800 p-2 rounded-full"></i>
-                  <p>Restaurante</p>
-                  <span className="p-2 text-green-600 font-bold rounded-lg">
-                    Completado
-                  </span>
-                  <p>950.00</p>
-                  <p>Casa vera</p>
-                  <p>21.8.2022. 9:30PM</p>
-                </div>
-                <div className="w-full flex justify-between items-center h-[60px]">
-                  <i class="bx bxs-chess text-[#1976D2] bg-gray-800 p-2 rounded-full"></i>
-                  <p>juegos</p>
-                  <span className="p-2 text-red-600 font-bold rounded-lg">
-                    Rechazado
-                  </span>
-                  <p>50.00</p>
-                  <p>Fornite</p>
-                  <p>21.8.2022. 9:30PM</p>
-                </div>
-                <div className="w-full flex text-center justify-between items-center h-[60px]">
-                  <i class="bx bx-credit-card text-[#1976D2] bg-gray-800 p-2 rounded-full"></i>
-                  <p>Pagos online</p>
-                  <span className="p-2 text-yellow-600 font-bold rounded-lg">
-                    Pendiente
-                  </span>
-                  <p>20.00</p>
-                  <p>Spotify</p>
-                  <p>21.8.2022. 9:30PM</p>
-                </div>
-              </div>
+            <div className="w-full mb-2 h-[260px]">
+              <CreditTable />
             </div>
           </div>
         </div>
@@ -101,9 +61,9 @@ export const Dashboard = () => {
                   />
                 </div>
                 <p>Jorge</p>
-                <i class="bx bx-chevron-down text-white"></i>
+                <i className="bx bx-chevron-down text-white"></i>
               </div>
-              <div className="w-[35px] h-[30px] flex rounded-md cursor-pointer items-center justify-center mr-2 bg-gray-600 hover:bg-gray-700 duration-300">
+              <div className="w-[35px] h-[30px] flex rounded-md cursor-pointer items-center justify-center mr-2 bg-[#25252c] hover:bg-[#3a3a45] duration-300">
                 <i className="bx bx-bell text-[18px] text-white "></i>
               </div>
             </div>
@@ -113,7 +73,9 @@ export const Dashboard = () => {
                   <h2 className="text-gray-300 text-[14px] font-light">
                     Balance
                   </h2>
-                  <p className="text-white text-[24px]"> ${formatNumber(selectedCard.amout)}</p>
+                  <p className="text-white text-[24px]">
+                    ${formatNumber(selectedCard.amount)}
+                  </p>
                 </div>
                 <div className="h-full flex items-center">
                   <button className="py-2 px-3 bg-[#25252c] hover:bg-[#32323a] duration-300 rounded-lg">
@@ -122,7 +84,15 @@ export const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-[290px] mb-4 p-4 rounded-lg bg-gray-900">
+            <div
+              style={{
+                backgroundImage: `url(${selectedCard?.cardDiseing})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+              className="w-full h-[290px] object-cover mb-4 p-4 rounded-lg bg-gray-900"
+            >
               <ActualityCardCredit />
             </div>
             <div className="w-full h-full mb-4 p-6 rounded-lg bg-gray-900">

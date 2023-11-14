@@ -35,15 +35,15 @@ export const CreditDisplayCardsItems = ({ item, index }) => {
     >
       <div className="flex items-center">
         <p className="text-[14px] text-white flex flex-col">
-          {item.cardTitle === "" ? "Por defecto" : item.cardTitle}
+          {item.cardTitle === "" ? "Por defecto" : item?.cardTitle}
           <span className=" text-[10px] mt-1 font-light italic text-gray-300">
-            {item.type}
+            {item?.type}
           </span>
         </p>
       </div>
       <div className="flex items-center justify-center">
         <p className="text-[14px] text-white mr-2">
-          ${formatNumber(item.amout)}
+          ${formatNumber(item?.amount)}
         </p>
         <CreditCard
           selectedInfo={item}

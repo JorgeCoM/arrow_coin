@@ -3,7 +3,8 @@ import { subDays, subWeeks, subMonths, subYears } from "date-fns";
 
 
 export const useFilterGrafig = (data) => {
-  const refIndex = data.length;
+
+  const refIndex = data?.length;
 
   const dataFormatter = (number) =>
     `$ ${Intl.NumberFormat("es-Do").format(number).toString()}`;
@@ -13,7 +14,7 @@ export const useFilterGrafig = (data) => {
 
   const filterData = (startDate, endDate) =>
     data.filter((item) => {
-      const currentTime = item.time;
+      const currentTime = item?.time;
       return currentTime >= startDate && currentTime <= endDate;
     });
 
@@ -44,9 +45,9 @@ export const useFilterGrafig = (data) => {
   const formatDataForChart = (data, selectedPeriod) => {
     return data.map((item) => {
       return {
-        time: formatDate(item.time, selectedPeriod),
-        Ingresos: item.Ingresos,
-        Gastos: item.Gastos,
+        time: formatDate(item?.time, selectedPeriod),
+        Ingreso: item?.Ingreso,
+        Gasto: item?.Gasto,
       };
     });
   };
@@ -56,30 +57,28 @@ export const useFilterGrafig = (data) => {
 
     switch (period) {
       case "1D":
-        periodStartDate = subDays(data[data.length - refIndex].time, 1);
+        periodStartDate = subDays(data[data?.length - refIndex]?.time, 1);
         break;
       case "1W":
-        periodStartDate = subWeeks(data[data.length - refIndex].time, 1);
+        periodStartDate = subWeeks(data[data?.length - refIndex]?.time, 1);
         break;
       case "1M":
-        periodStartDate = subMonths(data[data.length - refIndex].time, 1);
+        periodStartDate = subMonths(data[data?.length - refIndex]?.time, 1);
         break;
       case "3M":
-        periodStartDate = subMonths(data[data.length - refIndex].time, 3);
+        periodStartDate = subMonths(data[data?.length - refIndex]?.time, 3);
         break;
       case "6M":
-        periodStartDate = subMonths(data[data.length - 1].time, 6);
+        periodStartDate = subMonths(data[data?.length - 1]?.time, 6);
         break;
       case "1Y":
-        periodStartDate = subYears(data[data.length - 1].time, 1);
+        periodStartDate = subYears(data[data?.length - 1]?.time, 1);
         break;
       default:
-        // Return all data if it doesn't match any case
         return data;
     }
 
-    // Return the data filtered by day or month according to the period
-    return filterData(periodStartDate, data[data.length - 1].time);
+    return filterData(periodStartDate, data[data?.length - 1]?.time);
   };
 
   return {

@@ -1,5 +1,5 @@
 import { Outlet, useHref, NavLink } from "react-router-dom";
-import { CreditDisplayCards } from "../components/wallet/CreditDisplayCards";
+import { CreditDisplayCards } from "../components/creditCard";
 import { useSiderbar } from "../hooks";
 import "./UserLayout.css";
 

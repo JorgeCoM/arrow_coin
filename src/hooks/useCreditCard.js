@@ -14,7 +14,7 @@ export const useCreditCard = () => {
    }
 
    const getSelectedCreditCard = (cards) => {
-    return cards.find((card) => card.selected === true);
+    return cards?.find((card) => card.selected === true);
    }
   
     return {

@@ -1,7 +1,6 @@
 import { BadgeDelta } from "@tremor/react";
-import { CharCredit } from "../../components/wallet/CharCredit";
+import { CharCredit, CreditTable } from "../../components/creditCard";
 import { useCreditCard } from "../../hooks";
-import { CreditTable } from "../../components/wallet/CreditTable";
 
 export const WalletMain = () => {
   const { getAllCreditCards, getSelectedCreditCard, formatNumber } =
@@ -23,20 +22,20 @@ export const WalletMain = () => {
                 isIncreasePositive={true}
                 size="xs"
               >
-                <p className="text-black">$400</p>
+                <span className="text-black">${formatNumber(cardSelected?.income)}</span>
               </BadgeDelta>
               <BadgeDelta
                 deltaType="moderateDecrease"
                 isIncreasePositive={true}
                 size="xs"
               >
-                <p className="text-black">$231</p>
+                <span className="text-black">${formatNumber(cardSelected?.outcome)}</span>
               </BadgeDelta>
             </div>
           </div>
           <div className="w-full mb-8 text-center h-14">
             <p className="text-[26px] text-white font-bold">
-              ${formatNumber(cardSelected.amout)}
+              ${formatNumber(cardSelected.amount)}
             </p>
           </div>
           <div className="w-full h-16 flex justify-between">
@@ -52,7 +51,7 @@ export const WalletMain = () => {
           <CharCredit />
         </div>
       </div>
-      <div className="w-full h-[210px]">
+      <div className="w-full bg-gray-900 mt-2 rounded-lg">
         <CreditTable />
       </div>
     </>
