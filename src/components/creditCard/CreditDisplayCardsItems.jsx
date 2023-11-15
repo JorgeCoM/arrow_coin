@@ -45,12 +45,18 @@ export const CreditDisplayCardsItems = ({ item, index }) => {
         <p className="text-[14px] text-white mr-2">
           ${formatNumber(item?.amount)}
         </p>
-        <CreditCard
-          selectedInfo={item}
-          maxWidth={100}
-          maxHeight={70}
-          showCardInfo={false}
-        />
+        <div
+          style={item?.cardDiseing ? {
+            backgroundImage: `url(${item?.cardDiseing})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            width: "100px",
+            height: "70px"
+          } : {}}
+        >
+          <div className="w-full rounded-lg opacity-[0.8] h-full"></div>
+        </div>
       </div>
     </div>
   );

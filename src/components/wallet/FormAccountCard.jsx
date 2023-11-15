@@ -19,7 +19,7 @@ export const FormAccountCard = ({ type }) => {
     outcome: 0,
     incomeResumen: [],
     outcomeResumen: [],
-    cardDiseing: "./istockphoto-1323860984-612x612.jpg",
+    cardDiseing: "https://e1.pxfuel.com/desktop-wallpaper/979/214/desktop-wallpaper-credit-card-backgrounds-designs-posted-by-sarah-cunningham-card-design.jpg",
     showInfo: false,
     showDetail: false,
     typeCard: "Débito",
@@ -42,31 +42,6 @@ export const FormAccountCard = ({ type }) => {
   };
 
   const handleSubmit = () => {
-    // const nuevaTarjeta = {
-    //   id: dataCard.id,
-    //   cardCreditName: dataCard.cardCreditName,
-    //   cardCreditLastName: dataCard.cardCreditLastName,
-    //   bankname: dataCard.bankname,
-    //   cardNumber: dataCard.cardNumber,
-    //   type: dataCard.type,
-    //   cardTitle: dataCard.cardTitle,
-    //   month: dataCard.month,
-    //   year: dataCard.year,
-    //   cardCCV: dataCard.cardCCV,
-    //   amount: dataCard.amount,
-    //   income: dataCard.income,
-    //   incomeResumen: dataCard.incomeResumen,
-    //   outcome: dataCard.outcome,
-    //   outcomeResumen: dataCard.outcomeResumen,
-    //   cardDiseing: dataCard.cardDiseing,
-    //   showInfo: dataCard.showInfo,
-    //   showDetail: dataCard.showDetail,
-    //   typeCard: dataCard.typeCard,
-    //   selected: dataCard.selected,
-    //   transitionDate: dataCard.transitionDate,
-    //   metric: dataCard.metric,
-    //   metriCosts: dataCard.metriCosts
-    // };
     Dispatch(addCreditCard(dataCard));
   };
   return (
